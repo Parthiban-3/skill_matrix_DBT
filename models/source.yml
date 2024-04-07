@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: skill_matrix
+    database: skill_matrix
+    schema: submissions
+    tables:
+      - name: users
+      - name: submissions
+      - name: designations
+      - name: skills
