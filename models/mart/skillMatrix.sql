@@ -41,11 +41,11 @@ percent as (
 
     select 'SKILL'as EMPLOYEE_ID,
     'PERCENTAGE'as NAME,
-    sum(dbt)*100/200 AS DBT,
-    sum(azure)*100/200 AS AZURE,
-    sum(knime)*100/200 AS KNIME,
-    sum(databricks)*100/200 AS DATABRICKS,
-    sum(snowflakes)*100/200 AS SNOWFLAKES,
+    CAST(sum(dbt)*100/200 AS INTEGER) AS DBT,
+    CAST(sum(azure)*100/200 AS INTEGER) AS AZURE,
+    CAST(sum(knime)*100/200 AS INTEGER) AS KNIME,
+    CAST(sum(databricks)*100/200 AS INTEGER) AS DATABRICKS,
+    CAST(sum(snowflakes)*100/200 AS INTEGER) AS SNOWFLAKES,
     0 as TOTAL
      from matrix 
 )
