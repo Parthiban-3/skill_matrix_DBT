@@ -1,5 +1,6 @@
 with skills as (
-    select s.empid,s.skill,u.designation from {{ ref('stg_submissions')}} as s join {{ ref('stg_users')}} as u on u.empid = s.empid
+    select s.empid,s.skill,u.designation from {{ ref('stg_submissions')}} as s 
+    join {{ ref('stg_users')}} as u on u.empid = s.empid
 )
 SELECT 
     designation,

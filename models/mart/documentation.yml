@@ -1,0 +1,87 @@
+version: 2
+
+models:
+  - name: designationSkills
+    description: Describes the percentage of employee having a particular skill in each designation
+    columns:
+      - name: designation
+        description: All designations available in the organization
+        tests:
+          - unique
+          - not_null
+      - name: total
+        description: Total nubmber of employees in that designation.    
+      - name: DBT_PERCENT
+        description: Percentage of employee who have DBT skill.
+      - name: SNOWFLAKES_PERCENT
+        description: Percentage of employee who have SNOWFLAKES skill.
+      - name: AZURE_PERCENT
+        description: Percentage of employee who have AZURE skill.
+      - name: KNIME_PERCENT
+        description: Percentage of employee who have KNIME skill.
+      - name: DATABRICKS_PERCENT
+        description: Percentage of employee who have DATABRICKS skill.
+
+  - name: skillMatrix
+    description: It lists all employees in the organization with their skill detials where '1' represents yes,
+                 and '0' represents NO sorted descendingly by total no of skills.
+    columns:
+      - name: employee_id
+        description: Unique id of all employees in the organisation.
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name of the employee.    
+      - name: DBT
+        description: If this employee  have DBT skill.
+      - name: AZURE
+        description: If this employee  have SNOWFLAKES skill.
+      - name: KNIME
+        description: If this employee  have AZURE skill.
+      - name: DATABRICKS
+        description: If this employee  have KNIME skill.
+      - name: SNOWFLAKES
+        description: If this employee  have DATABRICKS skill.
+      - name: TOTAL
+        description: Total no. of skills a person has.
+
+  - name: skillProficiency
+    description: It shows the total no.of certifications approved for each profeciency level of a skill.
+    columns:
+      - name: skill
+        description: Unique list of all available skills.
+        tests:
+          - unique
+          - not_null
+      - name: beginner
+        description: No. of skills approved for beginner level proficiency. 
+      - name: intermediate
+        description: No. of skills approved for intermediate level proficiency. 
+      - name: advance
+        description: No. of skills approved for advance level proficiency. 
+      - name: total
+        description: Total approved skills for each skill.
+  
+  - name: topEmployee
+    description: It lists the top 10 employees having a particular skill, chosen by proficiency-advance
+                 and ordered by rating.
+    columns:
+      - name: skill_rank
+        description: Rank of the employee for this skill among all employees.
+        tests:
+          - unique
+          - not_null
+      - name: dbt
+        description: Top 10 employees who have dbt skill.
+      - name: azure
+        description: Top 10 employees who have azure skill.
+      - name: snowflakes
+        description: Top 10 employees who have snowflakes skill.
+      - name: databricks
+        description: Top 10 employees who have databricks skill.
+      - name: knime
+        description: Top 10 employees who have knime skill.
+
+
+ 

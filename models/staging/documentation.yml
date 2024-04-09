@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: It has the information about individual employee.
+    columns:
+      - name: empid
+        description: Individual unique IDs of employees.
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: Full name of the employee.
+      - name: designation
+        description: Designation of the employee in the organization.
+      - name: role
+        description: Role of the employee admin,approver or user
+
+  - name: stg_submissions
+    description: It has all the submissions made by individual employees which were approved.
+    columns:
+      - name: empid
+        description: Individual unique IDs of employees.
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: Full name of the employee.
+      - name: skill
+        description: It is the skill for which this submisson is.
+      - name: certification
+        description: It is the certification the user is has completed in this skill.
+      - name: proficiency
+        description: It has the proficiency levels such as beginner, intermediate and advance.
+      - name: rating
+        description: It has the rating value for that skill given by the approver ranging from 1 to 5.
+      - name: project_count
+        description: Total number of projects worked in that skill.
+      - name: total_duration
+        description: Total duration of the project in months.
+      - name: completed_on
+        description: Date of submission.
+
+  - name: stg_skills
+    description: It has all the available skills.
+    columns:
+      - name: skill
+        description: It lists all available skills.
+        tests:
+          - unique
+          - not_null
+      - name:  certificates
+        description: All certificates available for that skill.
