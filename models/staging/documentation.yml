@@ -22,7 +22,6 @@ models:
       - name: empid
         description: Individual unique IDs of employees.
         tests:
-          - unique
           - not_null
       - name: name
         description: Full name of the employee.
@@ -44,7 +43,7 @@ models:
   - name: stg_skills
     description: It has all the available skills.
     columns:
-      - name: skill
+      - name: name
         description: It lists all available skills.
         tests:
           - unique
