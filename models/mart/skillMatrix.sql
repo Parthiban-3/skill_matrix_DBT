@@ -40,16 +40,21 @@ matrix as(
     order by total desc ),
 
 percent as (
-    select 'SKILL'as EMPLOYEE_ID,
-    'PERCENTAGE'as NAME,
+    select 
+        'SKILL'                                  AS EMPLOYEE_ID,
+        'PERCENTAGE'                             AS NAME,
         CAST(sum(dbt)*100/200        AS INTEGER) AS DBT,
         CAST(sum(azure)*100/200      AS INTEGER) AS AZURE,
         CAST(sum(knime)*100/200      AS INTEGER) AS KNIME,
         CAST(sum(databricks)*100/200 AS INTEGER) AS DATABRICKS,
         CAST(sum(snowflakes)*100/200 AS INTEGER) AS SNOWFLAKES,
-    0 as TOTAL
+        100                                      AS TOTAL
     from matrix 
 )
-SELECT * FROM percent
-UNION ALL
-SELECT * FROM matrix
+SELECT 
+    * 
+    FROM percent
+    UNION ALL
+SELECT 
+    * 
+    FROM matrix

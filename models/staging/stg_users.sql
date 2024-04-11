@@ -3,7 +3,7 @@ select
     name,
     designation,
     role
-  from {{source('skill_matrix','users')}} 
+from {{source('skill_matrix','users')}} 
    
 
 

@@ -16,12 +16,12 @@ SELECT
         proficiency = 'advance'
 )
 select 
-skill_rank,
-    max(CASE WHEN skill = 'dbt' THEN concat(empid,'-',name) END )as DBT,
-    max(CASE WHEN skill = 'azure' THEN concat(empid,'-',name) END )as AZURE,
-    max(CASE WHEN skill = 'snowflakes' THEN concat(empid,'-',name) END )as SNOWFLAKES,
-    max(CASE WHEN skill = 'databricks' THEN concat(empid,'-',name) END )as DATABRICKS,
-    max(CASE WHEN skill = 'knime' THEN concat(empid,'-',name) END )as KNIME
+    skill_rank,
+    max(CASE WHEN skill = 'dbt' THEN concat(empid,'-',name) END )        AS DBT,
+    max(CASE WHEN skill = 'azure' THEN concat(empid,'-',name) END )      AS AZURE,
+    max(CASE WHEN skill = 'snowflakes' THEN concat(empid,'-',name) END ) AS SNOWFLAKES,
+    max(CASE WHEN skill = 'databricks' THEN concat(empid,'-',name) END ) AS DATABRICKS,
+    max(CASE WHEN skill = 'knime' THEN concat(empid,'-',name) END )      AS KNIME
 from 
     ranked 
 where 

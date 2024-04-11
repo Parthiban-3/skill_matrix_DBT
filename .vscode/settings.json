@@ -1,4 +1,4 @@
 {
-    "dbt.queryLimit": 20,
+    "dbt.queryLimit": 10,
     "dbt.enableNewQueryPanel": false
 }
